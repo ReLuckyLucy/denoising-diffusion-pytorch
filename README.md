@@ -2,7 +2,9 @@
 
 ## Denoising Diffusion Probabilistic Model, in Pytorch
 
-Implementation of <a href="https://arxiv.org/abs/2006.11239">Denoising Diffusion Probabilistic Model</a> in Pytorch. It is a new approach to generative modeling that may <a href="https://ajolicoeur.wordpress.com/the-new-contender-to-gans-score-matching-with-langevin-sampling/">have the potential</a> to rival GANs. It uses denoising score matching to estimate the gradient of the data distribution, followed by Langevin sampling to sample from the true distribution.
+## 在 Pytorch 中的去噪扩散概率模型
+
+在 Pytorch 中 <a href="https://arxiv.org/abs/2006.11239">实现去噪扩散概率模型</a>  这是一种新的生成建模方法可能 <a href="https://ajolicoeur.wordpress.com/the-new-contender-to-gans-score-matching-with-langevin-sampling/">有可能</a> 与GAN相媲美。它使用去噪分数匹配来估计数据分布的梯度，然后进行Langevin采样以从真实分布中采样。
 
 This implementation was inspired by the official Tensorflow version <a href="https://github.com/hojonathanho/diffusion">here</a>
 
@@ -18,13 +20,13 @@ Update: Turns out none of the technicalities really matters at all | <a href="ht
 
 [![PyPI version](https://badge.fury.io/py/denoising-diffusion-pytorch.svg)](https://badge.fury.io/py/denoising-diffusion-pytorch)
 
-## Install
+## 下载
 
 ```bash
 $ pip install denoising_diffusion_pytorch
 ```
 
-## Usage
+## 使用例子
 
 ```python
 import torch
@@ -87,7 +89,7 @@ trainer.train()
 
 Samples and model checkpoints will be logged to `./results` periodically
 
-## Multi-GPU Training
+## 多GPU训练
 
 The `Trainer` class is now equipped with <a href="https://huggingface.co/docs/accelerate/accelerator">🤗 Accelerator</a>. You can easily do multi-gpu training in two steps using their `accelerate` CLI
 
@@ -103,7 +105,7 @@ Then, in the same directory
 $ accelerate launch train.py
 ```
 
-## Miscellaneous
+## 杂项
 
 ### 1D Sequence
 
@@ -159,7 +161,7 @@ sampled_seq.shape # (4, 32, 128)
 You could consider adding a suitable metric to the training loop yourself after doing an editable install of this package
 `pip install -e .`.
 
-## Citations
+## 引文
 
 ```bibtex
 @inproceedings{NEURIPS2020_4c5bcfec,
